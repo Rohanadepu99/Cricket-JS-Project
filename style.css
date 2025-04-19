@@ -1,0 +1,449 @@
+*{
+  margin: 0;
+  padding: 0;
+}
+html,body{
+  height: 100%;
+  width: 100%;
+  background-color:#292824;
+}
+table, th, tr td{
+  border: 1px solid black;
+  border-collapse: collapse;
+  padding: 10px 15px;
+  margin: 12px;
+  border: none;
+  border-bottom: 2px solid rgba(165, 160, 160, 0.788);
+}
+th{
+  background-color: darkcyan;
+  color: whitesmoke;
+}
+tr:nth-child(2n){
+  background-color: rgb(17, 216, 150);
+}
+tr:nth-child(2n+1){
+  background-color: rgb(232, 235, 225);
+}
+
+
+.main{
+  margin: 4%;
+}
+
+.inputs{
+  display: flex;
+  justify-content: center;
+  justify-content: space-around;
+  padding: 15px;
+  
+
+}
+.inputs input{
+  margin-bottom: 10px;
+  margin-top: 5px;
+  padding: 5px 25px;
+  border-radius: 10px 10px 0px 0px;
+  border: none;
+  border-bottom: 2px solid black;
+  
+}
+.inputs button{
+  padding: 7px 15px; 
+  border-radius: 6px;
+  cursor: pointer;
+  background-color: lightseagreen;
+  color:white;
+  border: 1px solid rgb(139, 123, 123);
+}
+.teams-input{
+  
+  display: flex;
+  flex-direction: column;
+  background-color: rgb(228, 217, 217);
+  padding: 20px 25px;
+  border-radius: 3px;
+  box-shadow: -5px 10px 30px 5px rgba(0, 0, 0, 0.342);
+}
+.select-team{
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+.select-team select{
+  padding: 5px 25px;
+  border-radius: 4px;
+  background-color: lightseagreen;
+  color: rgb(255, 255, 255);
+  cursor: pointer;
+}
+.player-input{
+  display: flex;
+  flex-direction: column; 
+  background-color: rgb(228, 217, 217);
+  padding: 20px 25px;
+  border-radius: 3px;
+  box-shadow: -5px 10px 30px 5px rgba(0, 0, 0, 0.342);
+}
+.pop_bat{
+  position: fixed;
+  top: 20%;
+  right: 30%;
+  width: 30%;
+  height: 70px;
+  z-index: 2;
+  display: flex;
+  flex-direction: column; 
+  background-color: rgba(228, 217, 217);
+  padding: 55px 35px;
+  border-radius: 13px;
+  box-shadow: -10px 10px 600px 350px rgba(0, 0, 0, 0.404);
+  color: black;
+  display: none;
+}
+.pop-bowler{
+  position: fixed;
+  top: 20%;
+  right: 30%;
+  width: 30%;
+  height: 70px;
+  z-index: 1;
+  display: flex;
+  flex-direction: column; 
+  background-color: rgba(228, 217, 217);
+  padding: 55px 35px;
+  border-radius: 13px;
+  box-shadow: -10px 10px 600px 350px rgba(0, 0, 0, 0.404);
+  color: black;
+  display: none;
+  
+}
+
+.players_pop{
+  position: fixed;
+  top: 20%;
+  right: 30%;
+  width: 30%;
+  height: 200px;
+  z-index: 1;
+  display: flex;
+  flex-direction: column; 
+  background-color: rgb(228, 217, 217);
+  padding: 55px 35px;
+  border-radius: 13px;
+  box-shadow: -10px 10px 600px 350px rgba(0, 0, 0, 0.404);
+  color: black;
+  display: none;
+}
+
+.score{
+  background-color: rgb(164, 97, 228);
+  padding: 25px 20px;
+  display: flex;
+  justify-content: center;
+  justify-content: space-around;
+  align-items: center;
+  border-radius: 32px;
+  margin-top: 20px;
+}
+.total-score{
+  width: 200px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  
+}
+.total-score h1{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: rgb(255, 251, 0);
+  padding:10px 35px;
+  border-radius: 20px 20px 0px 0px;
+    
+}
+.overs{
+  background-color: rgb(29, 128, 123);
+  padding:10px 29px;
+  border-radius: 0px 0px 20px 20px;
+  color: rgb(255, 255, 255); 
+}
+.currRate{
+  margin-top: 0px;
+  background-color: rgba(56, 117, 56, 0.973);
+  padding:3px 20px;
+  color: wheat;
+  border-radius: 13px;
+  
+}
+.players{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  
+}
+.players h3{
+  margin-bottom:auto;
+}
+.players h4{
+  
+  padding: 10px 20px;
+  background-color: rgb(240, 235, 228);
+  margin: 5px;
+  border-radius: 10px;
+}
+.players span{
+  color:darkgreen;
+}
+.players p{
+  margin-top: 5px;
+  display:block;
+  color: darkred;
+}
+.timeline{
+  /* background-color: oldlace; */
+  padding: 15px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+.timeline span{
+  color: darkgreen;
+}
+.time1{
+  padding: 10px 15px;
+  background-color: rgb(240, 235, 228);
+  margin: 5px;
+  border-radius: 10px;
+  display: flex;
+  justify-content:space-around;
+}
+.time1 span{
+  color: darkgreen;
+}
+.balltimeline{
+  margin: 5px;
+  padding: 5px 10px;
+  background-color: rgb(240, 235, 228);
+  border-radius: 4px;
+}
+.need{
+  padding: 10px 15px;
+  background-color: rgba(233, 228, 220, 0.884);
+  margin: 5px;
+  border-radius: 10px; 
+}
+.runrate{
+  display: flex;
+}
+.controls{
+  margin: 20px 20px;
+  padding: 30px 10px;
+  display: flex;
+  justify-content: space-around;
+
+}
+.controls button{
+  border-radius: 22px;
+  border: none;
+  background-color: blueviolet;
+  color: white;
+  margin: 2px 3px;
+  padding: 12px 15px;
+  box-shadow: 0px 3px 2px 1px rgba(0, 0, 0, 0.644); 
+}
+.controls button:hover{
+  background-color: rgb(163, 114, 6);
+  color: rgb(247, 253, 253);
+  box-shadow: 0px 3px 2px 3px rgba(0, 0, 0, 0.644); 
+  cursor: pointer;
+}
+button:nth-child(5){
+  background-color: rgb(184, 97, 181);
+  color:white;
+}
+button:nth-child(6){
+  background-color: orange;
+  color: black;
+}
+.extra button:nth-child(1){
+ background-color: rgb(192, 184, 174);
+ color: black;
+}
+.extra button:nth-child(2){
+  background-color: crimson;
+  color: white;
+}
+.extra button:nth-child(3){
+  background-color: red;
+  color: black;
+}
+.extra button:nth-child(4){
+  background-color: rgb(248, 157, 46);
+  color: black;
+}
+.other button{
+  background-color: lightseagreen;
+}
+.data{
+  
+  padding: 20px 25px;
+  display: flex;
+  justify-content: center;
+  justify-content: space-around;
+}
+.onestinningData{
+  
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+}
+.batdata{
+  margin-bottom:25px;
+}
+.SecondinningData{
+  
+  padding: 10px;
+  display: flex;
+  flex-direction: column;   
+}
+
+@media (max-width:600px) {
+  .inputs{
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+  }
+  .teams-input{
+      margin-bottom: 15px;
+  }
+  .score{
+      display: flex;
+      flex-direction:column;
+  }
+  .total-score{
+      display:flex;
+      flex-direction: row;
+  }
+  .total-score h1{
+      border-radius: 20px 0px 0px 20px;
+  }
+  .overs{
+      border-radius: 0px;
+  }
+  .currRate{
+      display: flex;
+      border-radius:0px 12px 12px 0px;
+      padding: 10px 10px;
+  }
+  .controls{
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+  }
+  .controls button{
+      border-radius: 12px;
+      border: none;
+      background-color: blueviolet;
+      color: white;
+      margin: 5px 10px;
+      padding: 12px 25px;
+      box-shadow: 0px 1px 2px 1px rgba(0, 0, 0, 0.6); 
+  }
+  .runs{
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+  }
+  .extra{
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center; 
+  }
+  .other{
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+  }
+  .data{
+      margin: 0px;
+      padding:0px;
+      display: flex;
+      flex-direction: column;
+  }
+  table, th, tr td{
+      border: 1px solid black;
+      border-collapse: collapse;
+      padding: 5px 10px;
+      margin: 2px 1px;
+      border: none;
+      border-bottom: 2px solid rgba(165, 160, 160, 0.788);
+  }
+  .onestinningData{
+  
+      padding: 0px 10px;
+      display: flex;
+      flex-direction: column;
+  }
+  .batdata{
+      margin-bottom:25px;
+  }
+  .SecondinningData{
+      
+      padding: 10px;
+      display: flex;
+      flex-direction: column;   
+  }
+  .pop-bowler{
+      position: fixed;
+      top: 20%;
+      right: 5%;
+      width: 70%;
+      height: 100px;
+      z-index: 1;
+      display: flex;
+      flex-direction: column; 
+      background-color: rgb(228, 217, 217);
+      padding: 55px 35px;
+      margin: auto;
+      border-radius: 13px;
+      box-shadow: -10px 10px 600px 350px rgba(0, 0, 0, 0.404);
+      color: black;
+      display: none;   
+  }
+  .pop_bat{
+      position: fixed;
+      top: 20%;
+      right: 5%;
+      width: 70%;
+      height: 100px;
+      z-index: 2;
+      display: flex;
+      flex-direction: column; 
+      background-color: rgb(228, 217, 217);
+      padding: 55px 35px;
+      margin: auto;
+      border-radius: 13px;
+      box-shadow: -10px 10px 600px 350px rgba(0, 0, 0, 0.404);
+      color: black;
+      display: none;   
+  }
+  .players_pop{
+      position: fixed;
+      top: 20%;
+      right: 6%;
+      width: 70%;
+      height: 200px;
+      z-index: 3;
+      display: flex;
+      flex-direction: column; 
+      background-color: rgb(228, 217, 217);
+      padding: 55px 35px;
+      border-radius: 13px;
+      box-shadow: -10px 10px 600px 350px rgba(0, 0, 0, 0.404);
+      color: black;
+     display: none; 
+      
+  }
+
+}

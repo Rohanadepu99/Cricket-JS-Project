@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Score-Panel</title>
+    <link rel="stylesheet" href="style.css">
+    <link
+    href="https://cdn.jsdelivr.net/npm/remixicon@4.3.0/fonts/remixicon.css"
+    rel="stylesheet"
+/>
+
+</head>
+<body>
+  <center><img src="cricket_logo.png" width="50" height="40"></center>
+<center><marquee><h1 style="color: rgb(107, 226, 43);">Cricket Information</h1></center></marquee>
+    <div class="main">
+       
+        <div class="inputs">
+            <div class="teams-input">
+            <h3>Enter Teams Name:</h3>
+            <label for="TeamA">Team A</label>
+            <input type="text" placeholder="Enter team name" class="t1" value="teamA">
+            <label for="TeamB">Team B</label>
+            <input type="text" placeholder="Enter team name" class="t2" value="teamB">
+            <label for="countplayer">Player Count</label>
+            <input type="number" min="2" placeholder="total player" value="11" class="countPlayer">
+            <button onclick="teamSub()">done</button>
+            <div class="select-team">
+                <h3>Select Batting Team:</h3>
+                <select name="Teams" id="Team" required>
+                    <option  class="st1"></option>
+                    <option  class="st2"></option>
+                  </select>
+            </div>
+            <div class="totalOvers">
+                <h3>Total Over</h3>
+                <input type="number" class="tOver" placeholder="enter overs" min="1" required>
+            </div>
+            <button onclick="confirmation()">Confirmation</button>
+            </div>
+    
+            <div class="player-input">
+            <h3>Team: <span class="Tplayer">Team name</span></h3>
+            <h4>Enter players name:</h4>
+            <label for="playerA">Player 1</label>
+            <input type="text" placeholder="Player name" class="pl1" >
+            <label for="playerB">Player 2</label>
+            <input type="text" placeholder="Player name" class="pl2" >
+
+            <div class="players_pop">
+                <h4>Enter players name:</h4>
+                <label for="playerA">Player 1</label>
+                <input type="text" placeholder="Player name" class="pop_ply1" >
+                <label for="playerB">Player 2</label>
+                <input type="text" placeholder="Player name" class="pop_ply2">
+                <label for="bowler">Enter Bowler name</label>
+             <input type="text" placeholder="bowler name" class="pop_ply3" name="bowlers" id="bowler_pop" list="bowlers" autocomplete="off">
+             <button onclick="sub_popplayers()">Submit</button>
+            </div>
+
+            <div class="pop_bat">
+                <label for="player-pop"><i class="ri-user-shared-line"></i> Enter new batsman:</label>
+                <input type="text" placeholder=" Enter Player name" class="pop_pl" name="player-pop">
+                <button onclick="subpopbat()">Submit</button>
+            </div>
+
+            <label for="bowler">Enter Bowler name</label>
+            <input type="text" placeholder="bowler name" class="pl3" name="bowlers" id="bowler" list="bowlers" autocomplete="off">
+            <datalist id="bowlers"> 
+            </datalist>
+
+            <div class="pop-bowler">
+                <label for="bowler"><i class="ri-prohibited-2-fill"></i> Enter Bowler name : </label>
+            <input type="text" placeholder="bowler name" class="popl3" name="bowlers" id="bowler" list="bowlers" autocomplete="off">
+            <button onclick="subpopbowler()">Submit</button>
+            </div>
+
+            <button onclick="EnterPlayer()">Enter player</button>
+            </div>
+        </div>
+
+        <div class="score">
+            <div class="total-score">
+                <h1 class="Score-board"><span class="runboard">0</span>/<span class="wick">0</span></h1>
+                <h4 class="overs">(<span class="overNum">0</span>.<span class="ballNum">0</span>) overs</h4>
+                <h4 class="currRate">Run rate: <span class="runrr">0.0</span></h5>
+                
+            </div>
+            <div class="players">
+                <h4 class="ppl1"><i class="ri-arrow-drop-right-fill"></i><span class="pln1"><b>player1 </b></span> | <span class="pl1s">00</span>(<span class="pl1b">00</span>)</h4>
+                <h4 class="ppl2"><i class="ri-arrow-drop-right-fill"></i><span class="pln2"><b>player2 </b></span> | <span class="pl2s">00</span>(<span class="pl2b">00</span>)</h4>
+                <p class="margin"><b></b></p>
+            </div>
+        <div class="timeline">
+            <div class="time1">
+                <h4 class="ballerName"><i class="ri-prohibited-2-fill"></i>bowler </h4>
+                <h4 class="ballerOver">|<span class="ball-wick">0</span>-<span class="bwlr-run">0</span>(<span class="pl2bow">0.0</span>)</h4> 
+            </div>
+            <h4 class="balltimeline"></h4>
+            <div class="need">
+                <div class="runrate"><h5>RR:<span class="Rr">0.0</span>|</h5><h5> CR:<span class="CR">0.0</span></h5></div>
+                <div class="required"><b><span class="run">00</span> Run <span class="remball">00</span> ball</b></div>
+            </div>
+        </div>
+        </div>
+    
+        <div class="controls">
+            <div class="runs">
+                <button onclick="zero()" >0 run</button>
+                <button onclick="one()" >1 run</button>
+                <button onclick="two()">2 run</button>
+                <button onclick="three()">3 run</button>
+                <button onclick="four()">Four</button>
+                <button onclick="six()">Six</button>
+            </div>
+            <div class="extra">
+                <button onclick="wideBall()">Wide ball</button>
+                <button onclick="noBall()">No ball</button>
+                <button onclick="wicket()"><b>Wicket</b></button>
+                <button onclick="runOut()">run out non-strike</button>
+            </div>
+        <div class="other">
+            <button>Undo Last</button>
+            <button onclick="strikeChange()">Strike change</button>
+        </div>
+       </div>
+            
+        <div class="data">
+            <div class="onestinningData">
+                    <h3 style="color: white;" class="TeamAname"></h3>
+                    <div class="batdata">
+                        <table class="batterTable">
+                            <thead>
+                                <tr>
+                                    <th>Player</th>
+                                    <th>Run</th>
+                                    <th>Ball</th>
+                                    <th>4's</th>
+                                    <th>6's</th>
+                                    <th>SR</th>
+                                </tr>
+                            </thead>
+                            <tbody></tbody>
+                        </table>
+                    </div>
+                    <div class="balldata">
+                        <table class="ballerTable">
+                            <thead>
+                                <tr>
+                                    <th><i class="ri-basketball-fill"></i>Player</th>
+                                    <th>over</th>
+                                    <th>Run</th>
+                                    <th>M</th>
+                                    <th>W</th>
+                                    <th>Econ.</th>
+                                </tr>
+                            </thead>
+                                <tbody></tbody>
+                        </table>
+                </div>
+            </div>
+            <div class="SecondinningData">
+                <h3 style="color: white;" class="TeamBname"></h3>
+                <div class="batdata">
+                    <table class="batterTable2">
+                        <thead>
+                            <tr>
+                                <th>Player</th>
+                                <th>Run</th>
+                                <th>Ball</th>
+                                <th>4's</th>
+                                <th>6's</th>
+                                <th>SR</th>
+                            </tr>
+                        </thead>
+                        <tbody></tbody>
+                    </table>
+                </div>
+                <div class="balldata2">
+                    <table class="ballerTable2">
+                        <thead>
+                            <tr>
+                                <th><i class="ri-basketball-fill"></i>Player</th>
+                                <th>over</th>
+                                <th>Run</th>
+                                <th>M</th>
+                                <th>W</th>
+                                <th>Econ.</th>
+                            </tr>
+                        </thead>
+                            <tbody></tbody>
+                    </table>
+            </div>
+        </div>
+        </div>
+
+    </div>
+    <script src="app.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
